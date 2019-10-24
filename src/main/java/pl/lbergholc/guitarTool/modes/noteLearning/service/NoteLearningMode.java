@@ -28,7 +28,7 @@ public class NoteLearningMode implements Mode {
         Random randomNumberGenerator = new Random();
         int randomNumber = randomNumberGenerator.nextInt(notes.size());
         try {
-            player.playNote(randomNumber, PLAY_TIME);
+            player.playNote(randomNumber);
             view.info("Fret Number");
             String fretNumber = view.getMessageFromUser();
             view.info("String Number");

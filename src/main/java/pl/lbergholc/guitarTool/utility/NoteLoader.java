@@ -20,14 +20,16 @@ public class NoteLoader {
     private static final String FRET_STRING_SEPARATOR = "-";
     private static final int FRET = 0;
     private static final int GUITAR_STRING = 1;
+    private static final int SOUND_SYMBOL = 2;
 
     private static Note createNoteFromPath(Path path) throws FileNotFoundException, NumberFormatException {
         BufferedInputStream musicStream = new BufferedInputStream(new FileInputStream(path.toFile()));
-        String[] fretString = path.getFileName().toString().split(FRET_STRING_SEPARATOR);
+        String[] noteFields = path.getFileName().toString().split(FRET_STRING_SEPARATOR);
 
-        int fretNumber = Integer.parseInt(fretString[FRET]);
-        int stringNumber = Integer.parseInt(fretString[GUITAR_STRING]);
-        return new Note(fretNumber, stringNumber, musicStream);
+        int fretNumber = Integer.parseInt(noteFields[FRET]);
+        int stringNumber = Integer.parseInt(noteFields[GUITAR_STRING]);
+        String soundSymbol = noteFields[SOUND_SYMBOL];
+        return new Note(fretNumber, stringNumber, soundSymbol, musicStream);
     }
 
     public static List<Note> load() throws Exception {

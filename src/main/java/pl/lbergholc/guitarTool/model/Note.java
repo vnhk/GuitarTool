@@ -5,11 +5,13 @@ import java.io.BufferedInputStream;
 public class Note {
     private int fretNumber;
     private int stringNumber;
+    private String soundSymbol;
     private BufferedInputStream musicStream;
 
-    public Note(int fretNumber, int stringNumber, BufferedInputStream musicStream) {
+    public Note(int fretNumber, int stringNumber, String soundSymbol, BufferedInputStream musicStream) {
         this.fretNumber = fretNumber;
         this.stringNumber = stringNumber;
+        this.soundSymbol = soundSymbol;
         this.musicStream = musicStream;
     }
 
@@ -38,7 +40,15 @@ public class Note {
         return "Note{" +
                 "fretNumber=" + fretNumber +
                 ", stringNumber=" + stringNumber +
-                ", musicStream=" + musicStream +
+                ", soundSymbol=" + soundSymbol +
                 '}';
+    }
+
+    public String getSoundSymbol() {
+        return soundSymbol;
+    }
+
+    public void setSoundSymbol(String soundSymbol) {
+        this.soundSymbol = soundSymbol;
     }
 }
