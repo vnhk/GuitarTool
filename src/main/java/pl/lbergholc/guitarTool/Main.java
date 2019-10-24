@@ -3,7 +3,6 @@ package pl.lbergholc.guitarTool;
 import org.apache.log4j.Logger;
 import pl.lbergholc.guitarTool.model.Note;
 import pl.lbergholc.guitarTool.model.View;
-import pl.lbergholc.guitarTool.modes.model.Mode;
 import pl.lbergholc.guitarTool.modes.noteLearning.service.NoteLearningMode;
 import pl.lbergholc.guitarTool.service.NotePlayer;
 import pl.lbergholc.guitarTool.utility.NoteLoader;
@@ -22,8 +21,8 @@ public class Main {
             Scanner scanner = new Scanner(System.in);
             View consoleView = new ConsoleView(scanner);
 
-            Mode noteLearning = new NoteLearningMode(notes, player, consoleView);
-            noteLearning.start();
+            NoteLearningMode noteLearning = new NoteLearningMode(notes, player, consoleView);
+            noteLearning.learnSounds(notes);
 
         } catch (Exception e) {
             LOGGER.error(e.getMessage());
