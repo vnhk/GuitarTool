@@ -32,4 +32,13 @@ public class Note {
     public BufferedInputStream getMusicStream() {
         return musicStream;
     }
+
+    @Override
+    public String toString() {
+        return "Note{" +
+                "fretNumber=" + fretNumber +
+                ", stringNumber=" + stringNumber +
+                ", musicStream=" + musicStream +
+                '}';
+    }
 }

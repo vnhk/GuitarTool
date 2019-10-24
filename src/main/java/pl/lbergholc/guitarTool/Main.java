@@ -2,9 +2,15 @@ package pl.lbergholc.guitarTool;
 
 import org.apache.log4j.Logger;
 import pl.lbergholc.guitarTool.model.Note;
+import pl.lbergholc.guitarTool.model.View;
+import pl.lbergholc.guitarTool.modes.model.Mode;
+import pl.lbergholc.guitarTool.modes.noteLearning.service.NoteLearningMode;
+import pl.lbergholc.guitarTool.service.NotePlayer;
+import pl.lbergholc.guitarTool.utility.NoteLoader;
+import pl.lbergholc.guitarTool.view.ConsoleView;
 
 import java.util.List;
-import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
     private static final Logger LOGGER = Logger.getLogger(Main.class);
@@ -13,11 +19,12 @@ public class Main {
         try {
             List<Note> notes = NoteLoader.load();
             NotePlayer player = new NotePlayer(notes);
+            Scanner scanner = new Scanner(System.in);
+            View consoleView = new ConsoleView(scanner);
 
-            Random randomNumberGenerator = new Random();
-            int randomNumber = randomNumberGenerator.nextInt(notes.size());
+            Mode noteLearning = new NoteLearningMode(notes, player, consoleView);
+            noteLearning.start();
 
-            player.playNote(randomNumber);
         } catch (Exception e) {
             LOGGER.error(e.getMessage());
         }

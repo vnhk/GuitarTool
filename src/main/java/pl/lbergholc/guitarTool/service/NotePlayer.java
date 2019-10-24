@@ -1,4 +1,4 @@
-package pl.lbergholc.guitarTool;
+package pl.lbergholc.guitarTool.service;
 
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
@@ -22,5 +22,14 @@ public class NotePlayer {
         BufferedInputStream musicStream = notes.get(noteNumber).getMusicStream();
         Player player = new Player(musicStream);
         player.play();
+    }
+
+    public void playNote(int noteNumber, int time) throws JavaLayerException {
+        LOGGER.info("playNote");
+
+        BufferedInputStream musicStream = notes.get(noteNumber).getMusicStream();
+        Player player = new Player(musicStream);
+        player.play(time);
+
     }
 }

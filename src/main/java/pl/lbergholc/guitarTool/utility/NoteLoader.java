@@ -1,4 +1,4 @@
-package pl.lbergholc.guitarTool;
+package pl.lbergholc.guitarTool.utility;
 
 import org.apache.log4j.Logger;
 import pl.lbergholc.guitarTool.model.Note;
