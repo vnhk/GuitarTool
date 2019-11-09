@@ -1,11 +1,13 @@
 package pl.lbergholc.guitarTool;
 
 import org.apache.log4j.Logger;
-import pl.lbergholc.guitarTool.model.Note;
-import pl.lbergholc.guitarTool.model.View;
-import pl.lbergholc.guitarTool.modes.noteLearning.service.NoteLearningMode;
-import pl.lbergholc.guitarTool.service.NotePlayer;
-import pl.lbergholc.guitarTool.utility.NoteLoader;
+import pl.lbergholc.guitarTool.modes.TabCreatorMode;
+import pl.lbergholc.guitarTool.modes.TabPlayerMode;
+import pl.lbergholc.guitarTool.notes.model.Note;
+import pl.lbergholc.guitarTool.notes.model.View;
+import pl.lbergholc.guitarTool.notes.service.NotePlayer;
+import pl.lbergholc.guitarTool.notes.utility.NoteLoader;
+import pl.lbergholc.guitarTool.tabulature.model.Tab;
 import pl.lbergholc.guitarTool.view.ConsoleView;
 
 import java.util.List;
@@ -21,8 +23,12 @@ public class Main {
             Scanner scanner = new Scanner(System.in);
             View consoleView = new ConsoleView(scanner);
 
-            NoteLearningMode noteLearning = new NoteLearningMode(notes, player, consoleView);
-            noteLearning.learnSounds(notes);
+            TabCreatorMode tabCreatorMode = new TabCreatorMode(notes,consoleView);
+            TabPlayerMode tabPlayerMode = new TabPlayerMode(player,consoleView);
+
+            Tab tab = tabCreatorMode.createTab();
+            tabPlayerMode.playTab(tab);
+
 
         } catch (Exception e) {
             LOGGER.error(e.getMessage());

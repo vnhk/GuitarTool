@@ -1,17 +1,17 @@
-package pl.lbergholc.guitarTool.modes.noteLearning.service;
+package pl.lbergholc.guitarTool.modes;
 
 import javazoom.jl.decoder.JavaLayerException;
 import org.apache.log4j.Logger;
-import pl.lbergholc.guitarTool.model.Note;
-import pl.lbergholc.guitarTool.model.View;
-import pl.lbergholc.guitarTool.service.NotePlayer;
+import pl.lbergholc.guitarTool.notes.model.Note;
+import pl.lbergholc.guitarTool.notes.model.View;
+import pl.lbergholc.guitarTool.notes.service.NotePlayer;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-public class NoteLearningMode  {
+public class NoteLearningMode {
     private static final Logger LOGGER = Logger.getLogger(NoteLearningMode.class);
     private List<Note> notes;
     private NotePlayer player;

@@ -1,4 +1,4 @@
-package pl.lbergholc.guitarTool.model;
+package pl.lbergholc.guitarTool.notes.model;
 
 public interface View {
     void info(String msg);

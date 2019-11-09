@@ -1,4 +1,4 @@
-package pl.lbergholc.guitarTool.model;
+package pl.lbergholc.guitarTool.notes.model;
 
 import java.io.BufferedInputStream;
 

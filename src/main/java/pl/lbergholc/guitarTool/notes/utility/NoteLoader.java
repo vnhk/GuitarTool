@@ -1,7 +1,7 @@
-package pl.lbergholc.guitarTool.utility;
+package pl.lbergholc.guitarTool.notes.utility;
 
 import org.apache.log4j.Logger;
-import pl.lbergholc.guitarTool.model.Note;
+import pl.lbergholc.guitarTool.notes.model.Note;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;

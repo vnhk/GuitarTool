@@ -1,7 +1,7 @@
 package pl.lbergholc.guitarTool.view;
 
 import org.apache.log4j.Logger;
-import pl.lbergholc.guitarTool.model.View;
+import pl.lbergholc.guitarTool.notes.model.View;
 
 import java.util.Scanner;
 
