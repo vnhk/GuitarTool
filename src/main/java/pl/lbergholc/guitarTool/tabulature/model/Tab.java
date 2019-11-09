@@ -2,10 +2,11 @@ package pl.lbergholc.guitarTool.tabulature.model;
 
 import pl.lbergholc.guitarTool.notes.model.Note;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tab {
+public class Tab implements Serializable {
     private List<Note> notes = new ArrayList<>();
     private String tabName;
     private String creatorName;

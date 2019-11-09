@@ -2,23 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5472e2c9-ec45-4b86-a5cb-f70d0120f8f3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/modes/TabCreatorMode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/modes/TabPlayerMode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/notes/utility/NoteHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/tabulature/model/Tab.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/abc.gp5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/tabulature/TabHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/model/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/notes/model/Note.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/model/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/notes/model/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/modes/model/Mode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/modes/noteLearning/service/NoteLearningMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/modes/NoteLearningMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/service/NotePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/notes/service/NotePlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/utility/NoteLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/notes/utility/NoteLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/view/ConsoleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/view/ConsoleView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/modes/TabPlayerMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/modes/TabPlayerMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/notes/model/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/notes/model/Note.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/notes/service/NotePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/notes/service/NotePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/notes/utility/NoteLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/notes/utility/NoteLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/tabulature/model/Tab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/tabulature/model/Tab.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/lbergholc/guitarTool/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/lbergholc/guitarTool/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/lbergholc/guitarTool/model/Note.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571940485972</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add tab creator">
+      <created>1573313151186</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1573313151186</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -173,7 +174,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Add sound symbol, sounds for String e B" />
     <MESSAGE value="Remove Mode Interface, add learn modes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove Mode Interface, add learn modes" />
+    <MESSAGE value="add tab creator" />
+    <option name="LAST_COMMIT_MESSAGE" value="add tab creator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -182,6 +184,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/notes/utility/NoteHelper.java</url>
           <line>9</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/javazoom/jlayer/1.0.1/jlayer-1.0.1.jar!/javazoom/jl/player/Player.class</url>
+          <line>50</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/Main.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

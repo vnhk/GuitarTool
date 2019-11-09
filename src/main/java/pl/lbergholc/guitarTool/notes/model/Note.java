@@ -1,14 +1,16 @@
 package pl.lbergholc.guitarTool.notes.model;
 
-import java.io.BufferedInputStream;
+import java.io.InputStream;
+import java.io.Serializable;
+import java.util.Objects;
 
-public class Note {
+public class Note implements Serializable, Comparable {
     private int fretNumber;
     private int stringNumber;
     private String soundSymbol;
-    private BufferedInputStream musicStream;
+    private InputStream musicStream;
 
-    public Note(int fretNumber, int stringNumber, String soundSymbol, BufferedInputStream musicStream) {
+    public Note(int fretNumber, int stringNumber, String soundSymbol, InputStream musicStream) {
         this.fretNumber = fretNumber;
         this.stringNumber = stringNumber;
         this.soundSymbol = soundSymbol;
@@ -31,7 +33,7 @@ public class Note {
         this.stringNumber = stringNumber;
     }
 
-    public BufferedInputStream getMusicStream() {
+    public InputStream getMusicStream() {
         return musicStream;
     }
 
@@ -44,11 +46,42 @@ public class Note {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Note note = (Note) o;
+        return fretNumber == note.fretNumber &&
+                stringNumber == note.stringNumber &&
+                Objects.equals(soundSymbol, note.soundSymbol);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fretNumber, stringNumber, soundSymbol);
+    }
+
     public String getSoundSymbol() {
         return soundSymbol;
     }
 
     public void setSoundSymbol(String soundSymbol) {
         this.soundSymbol = soundSymbol;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Note note = (Note) o;
+        if (this.getStringNumber() > note.getStringNumber()) {
+            return 1;
+        } else if (this.getStringNumber() == note.getStringNumber()) {
+            if (this.getFretNumber() > note.getFretNumber()) {
+                return 1;
+            } else {
+                return -1;
+            }
+        } else {
+            return -1;
+        }
     }
 }

@@ -5,9 +5,14 @@ import org.apache.log4j.Logger;
 import pl.lbergholc.guitarTool.notes.model.Note;
 import pl.lbergholc.guitarTool.notes.model.View;
 import pl.lbergholc.guitarTool.notes.service.NotePlayer;
+import pl.lbergholc.guitarTool.tabulature.TabHelper;
 import pl.lbergholc.guitarTool.tabulature.model.Tab;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
+import java.util.Map;
+
 
 public class TabPlayerMode {
     private static final Logger LOGGER = Logger.getLogger(TabPlayerMode.class);
@@ -19,11 +24,23 @@ public class TabPlayerMode {
         this.view = view;
     }
 
-    public void playTab(Tab tab) throws JavaLayerException {
+    public void playTab(Tab tab) throws InterruptedException, IOException {
         List<Note> notes = tab.getNotes();
 
+        Map<Note, List<InputStream>> noteInputStreams = TabHelper.getNoteInputStreams(tab);
+
         for (Note note : notes) {
-            player.playNote(note,65);
+            InputStream stream = noteInputStreams.get(note).remove(0);
+            Thread thread = new Thread(() -> {
+                try {
+                    player.playNote(stream);
+                } catch (JavaLayerException e) {
+                    e.printStackTrace();
+                }
+            });
+            thread.start();
+            Thread.sleep(700);
+
         }
     }
 

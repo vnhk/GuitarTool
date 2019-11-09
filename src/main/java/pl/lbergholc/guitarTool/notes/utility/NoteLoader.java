@@ -6,6 +6,7 @@ import pl.lbergholc.guitarTool.notes.model.Note;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -32,7 +33,13 @@ public class NoteLoader {
         return new Note(fretNumber, stringNumber, soundSymbol, musicStream);
     }
 
-    public static List<Note> load() throws Exception {
+    public static InputStream getMusicStream(int fret, int string, String symbol) throws FileNotFoundException {
+        String path = PATH + "\\" + fret + "-" + string + "-" + symbol + "-" + ".mp3";
+
+        return new BufferedInputStream(new FileInputStream(path));
+    }
+
+    public static List<Note> loadAll() throws Exception {
         List<Note> notes = new ArrayList<>();
 
         try (Stream<Path> paths = Files.walk(Paths.get(PATH))) {

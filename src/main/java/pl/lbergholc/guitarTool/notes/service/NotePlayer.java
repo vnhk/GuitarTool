@@ -5,7 +5,7 @@ import javazoom.jl.player.Player;
 import org.apache.log4j.Logger;
 import pl.lbergholc.guitarTool.notes.model.Note;
 
-import java.io.BufferedInputStream;
+import java.io.InputStream;
 import java.util.List;
 
 public class NotePlayer {
@@ -16,32 +16,32 @@ public class NotePlayer {
         this.notes = notes;
     }
 
-    public void playNote(int noteNumber) throws JavaLayerException {
-        LOGGER.info("playNote");
+    public void playNote(InputStream musicStream) throws JavaLayerException {
+        Player player = new Player(musicStream);
+        player.play();
+    }
 
-        BufferedInputStream musicStream = notes.get(noteNumber).getMusicStream();
+    public void playNote(int noteNumber) throws JavaLayerException {
+
+        InputStream musicStream = notes.get(noteNumber).getMusicStream();
         Player player = new Player(musicStream);
         player.play();
     }
 
     public void playNote(Note note) throws JavaLayerException {
-        LOGGER.info("playNote");
         Player player = new Player(note.getMusicStream());
         player.play();
     }
 
     public void playNote(Note note, int time) throws JavaLayerException {
-        LOGGER.info("playNote");
         Player player = new Player(note.getMusicStream());
         player.play(time);
     }
 
     public void playNote(int noteNumber, int time) throws JavaLayerException {
-        LOGGER.info("playNote");
 
-        BufferedInputStream musicStream = notes.get(noteNumber).getMusicStream();
+        InputStream musicStream = notes.get(noteNumber).getMusicStream();
         Player player = new Player(musicStream);
         player.play(time);
-
     }
 }
