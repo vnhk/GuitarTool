@@ -30,7 +30,7 @@ public class Main {
             TabCreatorMode tabCreatorMode = new TabCreatorMode(notes, consoleView);
             TabPlayerMode tabPlayerMode = new TabPlayerMode(player, consoleView);
 
-            Tab tab = TabHelper.loadTab("tab");
+            Tab tab = tabCreatorMode.createTab();
             tabPlayerMode.playTab(tab);
             TabHelper.saveTab("tab", tab);
 
