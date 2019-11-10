@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5472e2c9-ec45-4b86-a5cb-f70d0120f8f3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/tabulature/TabHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/tabulature/model/Sound.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tabs/tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/modes/NoteLearningMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/modes/NoteLearningMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/modes/TabCreatorMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/modes/TabCreatorMode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/modes/TabPlayerMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/modes/TabPlayerMode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/notes/model/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/notes/model/Note.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/notes/service/NotePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/notes/service/NotePlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/notes/utility/NoteLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/notes/utility/NoteLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/tabulature/TabHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/tabulature/utility/TabHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/tabulature/model/Tab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/lbergholc/guitarTool/tabulature/model/Tab.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/lbergholc/guitarTool/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/lbergholc/guitarTool/Main.class" afterDir="false" />
     </list>
@@ -154,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573313151186</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fix playing the same sound">
+      <created>1573332638293</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1573332638293</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -175,7 +184,11 @@
     <MESSAGE value="Add sound symbol, sounds for String e B" />
     <MESSAGE value="Remove Mode Interface, add learn modes" />
     <MESSAGE value="add tab creator" />
-    <option name="LAST_COMMIT_MESSAGE" value="add tab creator" />
+    <MESSAGE value="Fix playing the same sound" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix playing the same sound" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

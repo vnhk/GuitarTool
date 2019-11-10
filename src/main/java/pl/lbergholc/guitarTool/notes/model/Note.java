@@ -1,6 +1,5 @@
 package pl.lbergholc.guitarTool.notes.model;
 
-import java.io.InputStream;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -8,13 +7,11 @@ public class Note implements Serializable, Comparable {
     private int fretNumber;
     private int stringNumber;
     private String soundSymbol;
-    private InputStream musicStream;
 
-    public Note(int fretNumber, int stringNumber, String soundSymbol, InputStream musicStream) {
+    public Note(int fretNumber, int stringNumber, String soundSymbol) {
         this.fretNumber = fretNumber;
         this.stringNumber = stringNumber;
         this.soundSymbol = soundSymbol;
-        this.musicStream = musicStream;
     }
 
     public int getFretNumber() {
@@ -33,9 +30,6 @@ public class Note implements Serializable, Comparable {
         this.stringNumber = stringNumber;
     }
 
-    public InputStream getMusicStream() {
-        return musicStream;
-    }
 
     @Override
     public String toString() {

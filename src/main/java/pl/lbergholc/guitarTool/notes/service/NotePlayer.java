@@ -20,28 +20,4 @@ public class NotePlayer {
         Player player = new Player(musicStream);
         player.play();
     }
-
-    public void playNote(int noteNumber) throws JavaLayerException {
-
-        InputStream musicStream = notes.get(noteNumber).getMusicStream();
-        Player player = new Player(musicStream);
-        player.play();
-    }
-
-    public void playNote(Note note) throws JavaLayerException {
-        Player player = new Player(note.getMusicStream());
-        player.play();
-    }
-
-    public void playNote(Note note, int time) throws JavaLayerException {
-        Player player = new Player(note.getMusicStream());
-        player.play(time);
-    }
-
-    public void playNote(int noteNumber, int time) throws JavaLayerException {
-
-        InputStream musicStream = notes.get(noteNumber).getMusicStream();
-        Player player = new Player(musicStream);
-        player.play(time);
-    }
 }

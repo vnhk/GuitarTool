@@ -5,7 +5,9 @@ import org.apache.log4j.Logger;
 import pl.lbergholc.guitarTool.notes.model.Note;
 import pl.lbergholc.guitarTool.notes.model.View;
 import pl.lbergholc.guitarTool.notes.service.NotePlayer;
+import pl.lbergholc.guitarTool.notes.utility.NoteLoader;
 
+import java.io.FileNotFoundException;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -23,11 +25,11 @@ public class NoteLearningMode {
         this.view = consoleView;
     }
 
-    public void learnSounds(List<Note> notesToLearn) throws JavaLayerException {
+    public void learnSounds(List<Note> notesToLearn) throws JavaLayerException, FileNotFoundException {
         Collections.shuffle(notesToLearn);
         for (Note note : notesToLearn) {
             view.info(note.toString());
-            player.playNote(note);
+            player.playNote(NoteLoader.getMusicStream(note.getFretNumber(), note.getStringNumber(), note.getSoundSymbol()));
         }
     }
 
@@ -38,7 +40,7 @@ public class NoteLearningMode {
 
         try {
             learnSounds(notesWithCSound);
-        } catch (JavaLayerException e) {
+        } catch (JavaLayerException | FileNotFoundException e) {
             LOGGER.error(e.getMessage());
             e.printStackTrace();
         }
@@ -49,7 +51,8 @@ public class NoteLearningMode {
         Random randomNumberGenerator = new Random();
         int randomNumber = randomNumberGenerator.nextInt(notes.size());
         try {
-            player.playNote(randomNumber);
+            Note note = notes.get(randomNumber);
+            player.playNote(NoteLoader.getMusicStream(note.getFretNumber(), note.getStringNumber(), note.getSoundSymbol()));
             view.info("Fret Number");
             String fretNumber = view.getMessageFromUser();
             view.info("String Number");

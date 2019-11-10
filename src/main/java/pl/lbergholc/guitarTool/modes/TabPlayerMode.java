@@ -5,13 +5,17 @@ import org.apache.log4j.Logger;
 import pl.lbergholc.guitarTool.notes.model.Note;
 import pl.lbergholc.guitarTool.notes.model.View;
 import pl.lbergholc.guitarTool.notes.service.NotePlayer;
-import pl.lbergholc.guitarTool.tabulature.TabHelper;
+import pl.lbergholc.guitarTool.tabulature.model.Sound;
 import pl.lbergholc.guitarTool.tabulature.model.Tab;
+import pl.lbergholc.guitarTool.tabulature.utility.TabHelper;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 
 public class TabPlayerMode {
@@ -25,24 +29,31 @@ public class TabPlayerMode {
     }
 
     public void playTab(Tab tab) throws InterruptedException, IOException {
-        List<Note> notes = tab.getNotes();
+        List<Sound> sounds = tab.getSounds();
 
         Map<Note, List<InputStream>> noteInputStreams = TabHelper.getNoteInputStreams(tab);
 
-        for (Note note : notes) {
-            InputStream stream = noteInputStreams.get(note).remove(0);
-            Thread thread = new Thread(() -> {
-                try {
-                    player.playNote(stream);
-                } catch (JavaLayerException e) {
-                    e.printStackTrace();
-                }
-            });
-            thread.start();
-            Thread.sleep(700);
+        for (int i = 0; i < sounds.size(); i++) {
+            List<Note> notes = Arrays.stream(sounds.get(i).getNotesInSound())
+                    .filter(Objects::nonNull)
+                    .collect(Collectors.toList());
 
+            for (int y = 0; y < notes.size(); y++) {
+                InputStream stream = noteInputStreams.get(notes.get(y)).remove(0);
+                int finalY = y;
+                Thread thread = new Thread(() -> {
+                    try {
+                        Thread.sleep((sounds.size() - finalY - 1) * 200);
+                        player.playNote(stream);
+                    } catch (JavaLayerException | InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                });
+                thread.start();
+            }
+            Thread.sleep(sounds.get(i).getTimeOfSound() + 500);
         }
+
+
     }
-
-
 }

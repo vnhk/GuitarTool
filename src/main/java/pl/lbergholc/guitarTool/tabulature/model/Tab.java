@@ -1,23 +1,21 @@
 package pl.lbergholc.guitarTool.tabulature.model;
 
-import pl.lbergholc.guitarTool.notes.model.Note;
-
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Tab implements Serializable {
-    private List<Note> notes = new ArrayList<>();
     private String tabName;
     private String creatorName;
     private String tuning;
+    private List<Sound> sounds = new LinkedList<>();
 
-    public List<Note> getNotes() {
-        return notes;
+    public List<Sound> getSounds() {
+        return sounds;
     }
 
-    public void setNotes(List<Note> notes) {
-        this.notes = notes;
+    public void setSounds(List<Sound> sounds) {
+        this.sounds = sounds;
     }
 
     public String getTabName() {

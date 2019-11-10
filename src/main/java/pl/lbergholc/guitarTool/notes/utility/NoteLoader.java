@@ -24,13 +24,12 @@ public class NoteLoader {
     private static final int SOUND_SYMBOL = 2;
 
     private static Note createNoteFromPath(Path path) throws FileNotFoundException, NumberFormatException {
-        BufferedInputStream musicStream = new BufferedInputStream(new FileInputStream(path.toFile()));
         String[] noteFields = path.getFileName().toString().split(FRET_STRING_SEPARATOR);
 
         int fretNumber = Integer.parseInt(noteFields[FRET]);
         int stringNumber = Integer.parseInt(noteFields[GUITAR_STRING]);
         String soundSymbol = noteFields[SOUND_SYMBOL];
-        return new Note(fretNumber, stringNumber, soundSymbol, musicStream);
+        return new Note(fretNumber, stringNumber, soundSymbol);
     }
 
     public static InputStream getMusicStream(int fret, int string, String symbol) throws FileNotFoundException {
